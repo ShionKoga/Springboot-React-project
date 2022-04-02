@@ -7,8 +7,8 @@ interface ArticleService {
 }
 
 @Service
-class DefaultArticleService: ArticleService {
+class DefaultArticleService(private val articleRepository: ArticleRepository) : ArticleService {
     override fun allArticles(): List<Article> {
-        return emptyList()
+        return articleRepository.findAll()
     }
 }
