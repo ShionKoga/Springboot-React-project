@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/articles")
-class ArticleController() {
+class ArticleController(private val articleService: ArticleService) {
     @GetMapping
-    fun getAllArticles(): String {
-        return "hello spring boot"
+    fun getAllArticles(): List<Article> {
+        return articleService.allArticles()
     }
 }
