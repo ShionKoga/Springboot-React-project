@@ -6,4 +6,7 @@ class StubArticleService: ArticleService {
         return allArticles_return_value
     }
 
+    override fun postArticle(article: ArticleRecord) {
+    }
+
 }

@@ -6,4 +6,9 @@ class SpyArticleService: ArticleService {
         allArticles_isCalled = true
         return emptyList()
     }
+
+    var argument_postArticle: ArticleRecord? = null
+    override fun postArticle(article: ArticleRecord) {
+        argument_postArticle = article
+    }
 }

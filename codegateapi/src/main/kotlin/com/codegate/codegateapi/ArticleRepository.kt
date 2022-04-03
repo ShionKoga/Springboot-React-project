@@ -6,6 +6,6 @@ import javax.transaction.Transactional
 
 @Repository
 @Transactional
-interface ArticleRepository: JpaRepository<Article, Int> {
-    override fun findAll(): List<Article>
+interface ArticleRepository: JpaRepository<ArticleRecord, Int> {
+    override fun findAll(): List<ArticleRecord>
 }
