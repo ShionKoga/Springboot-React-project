@@ -5,7 +5,7 @@ import {render} from "@testing-library/react";
 import AppNavigation from "../AppNavigation";
 
 
-describe('', () => {
+describe('AppNavigation', () => {
     let appProps: AppProps
 
     beforeEach(() => {
