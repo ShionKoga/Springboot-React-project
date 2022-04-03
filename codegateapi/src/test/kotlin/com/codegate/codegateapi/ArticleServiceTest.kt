@@ -27,22 +27,21 @@ class ArticleServiceTest {
     @Test
     fun `ArticleService returns list of Articles`() {
         articleRepository.save(
-            ArticleRecord(1, "hoge", "hogehoge")
+            ArticleRecord(1, "title", "body")
         )
 
 
         val actual = articleService.allArticles()
 
-        assertEquals(
-            listOf(Article(1, "hoge", "hogehoge")),
-            actual
-        )
+        assertEquals("title", actual[0].title)
+        assertEquals("body", actual[0].body)
     }
 
     @Test
     fun `post article can save record`() {
-        val articleRecord = ArticleRecord(1, "hoge", "hogehoge")
+        val articleRecord = ArticleRecord(1, "title", "body")
         articleService.postArticle(articleRecord)
+
 
         val actualArticleRecord = articleRepository.findAll()
         assertTrue(actualArticleRecord.contains(articleRecord))
