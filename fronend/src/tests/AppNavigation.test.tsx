@@ -1,5 +1,5 @@
 import {AppProps} from "../App";
-import StubArticleRepo from "./StubArticlesRepo";
+import SpyStubArticleRepo from "./SpyStubArticlesRepo";
 import {act} from "react-dom/test-utils";
 import {render} from "@testing-library/react";
 import AppNavigation from "../AppNavigation";
@@ -9,7 +9,7 @@ describe('AppNavigation', () => {
     let appProps: AppProps
 
     beforeEach(() => {
-        const stubArticlesRepo = new StubArticleRepo()
+        const stubArticlesRepo = new SpyStubArticleRepo()
         stubArticlesRepo.allArticles_return_value = Promise.resolve([])
         appProps = {articleRepo: stubArticlesRepo}
     })

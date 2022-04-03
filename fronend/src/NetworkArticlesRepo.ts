@@ -3,6 +3,7 @@ import {Http} from "./networking/NetworkHttp";
 
 export default interface ArticlesRepo {
     allArticles(): Promise<Article[]>
+    postArticle(title: string, body: string): void
 }
 
 export class NetworkArticlesRepo implements ArticlesRepo {
@@ -14,5 +15,8 @@ export class NetworkArticlesRepo implements ArticlesRepo {
 
     async allArticles(): Promise<Article[]> {
         return await this.http.get('/api/articles') as Article[]
+    }
+
+    postArticle(title: string, body: string): void {
     }
 }
