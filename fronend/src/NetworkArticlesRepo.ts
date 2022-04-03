@@ -18,5 +18,7 @@ export class NetworkArticlesRepo implements ArticlesRepo {
     }
 
     postArticle(title: string, body: string): void {
+        const sendJson = {title, body}
+        this.http.post('/api/articles', sendJson)
     }
 }

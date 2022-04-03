@@ -7,4 +7,11 @@ export default class SpyStubHttp implements Http {
         this.argument_get = url
         return this.get_return_value
     }
+
+    argument_post_url?: string = undefined
+    argument_post_json?: object = undefined
+    post(url: string, json: object): void {
+        this.argument_post_url = url
+        this.argument_post_json = json
+    }
 }
